@@ -3,7 +3,7 @@
 $installer = $this;
 $tableNews = $installer->getTable('dsnews/table_news');
 
-die($tableNews);
+//die($tableNews);
 
 $installer->startSetup();
 
