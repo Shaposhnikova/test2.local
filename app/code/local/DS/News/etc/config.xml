@@ -6,6 +6,18 @@
         </DS_News>
     </modules>
     <global>
+        <models>
+            <dsnews>
+                <resourceModel>dsnews_resource</resourceModel>
+            </dsnews>
+            <dsnews_resource>
+                <entities>
+                    <table_news>
+                        <table>ds_news_entities</table>
+                    </table_news>
+                </entities>
+            </dsnews_resource>
+        </models>
         <resources>
             <dsnews_setup>
                 <setup>
