@@ -74,4 +74,13 @@
             </dsnews>
         </routers>
     </admin>
+    <adminhtml>
+        <menu>
+            <dsnews module="dsnews">
+                <title>News</title>
+                <sort_order>77</sort_order>
+                <action>dsnews_admin/adminhtml_news</action>
+            </dsnews>
+        </menu>
+    </adminhtml>
 </config>
