@@ -63,4 +63,15 @@
             </dsnews_setup>
         </resources>
     </global>
+    <admin>
+        <routers>
+            <dsnews_admin>
+                <use>admin</use>
+                <args>
+                    <module>DS_News</module>
+                    <frontName>dsnews_admin</frontName>
+                </args>
+            </dsnews_admin>
+        </routers>
+    </admin>
 </config>
