@@ -87,7 +87,7 @@
                 <action>dsnews_admin/adminhtml_news</action>
             </dsnews>
         </menu>
-
+    </adminhtml>
     <adminhtml>
         <acl>
             <resources>
