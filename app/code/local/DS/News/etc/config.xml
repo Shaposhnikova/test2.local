@@ -87,5 +87,26 @@
                 <action>dsnews_admin/adminhtml_news</action>
             </dsnews>
         </menu>
+
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <my_section>
+                                            <title>News</title>
+                                        </my_section>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
     </adminhtml>
 </config>
