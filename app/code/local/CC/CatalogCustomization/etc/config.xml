@@ -7,21 +7,20 @@
         </modules>
     <global>
         <models>
-            <xyzcatalog>
+            <cc_catalog>
                 <class>CatalogCustomization</class>
-            </xyzcatalog>
+            </cc_catalog>
         </models>
-    <strong><events>
-        <cms_page_prepare_save>
-            <observers>
-                <CatalogCustomization>
-                    <type>singleton</type>
-                    <class>exemple/observer</class>
-                    <method> saveCmsPageObserve</method>
-                </CatalogCustomization>
-            </observers>
-        </cms_page_prepare_save>
-    </events>
-    </strong>
-
+        <events>
+            <catalog_product_get_final_price>
+                <observers>
+                    <cc_catalog_price_observer>
+                        <type>singleton</type>
+                        <class>CC_Catalog_Model_Price_Observer</class>
+                        <method>apply_discount_percent</method>
+                    </cc_catalog_price_observer>
+                </observers>
+            </catalog_product_get_final_price>
+        </events>
+    </global>
 </config>
