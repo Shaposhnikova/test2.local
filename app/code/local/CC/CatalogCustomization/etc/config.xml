@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config>
+        <modules>
+            <CatalogCustomization>
+                <version>0.0.1</version>
+            </CatalogCustomization>
+        </modules>
+    <global>
+        <models>
+            <xyzcatalog>
+                <class>CatalogCustomization</class>
+            </xyzcatalog>
+        </models>
+    <strong><events>
+        <cms_page_prepare_save>
+            <observers>
+                <CatalogCustomization>
+                    <type>singleton</type>
+                    <class>exemple/observer</class>
+                    <method> saveCmsPageObserve</method>
+                </CatalogCustomization>
+            </observers>
+        </cms_page_prepare_save>
+    </events>
+    </strong>
+
+</config>
