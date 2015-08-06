@@ -1,6 +1,6 @@
 <?php
 
-class CC_Catalog_Model_Price_Observer
+class CC_Catalog_Model_Price_Observer extends Varien_Event_Observer
 {
     public function __construct()
     {
@@ -10,7 +10,7 @@ class CC_Catalog_Model_Price_Observer
      * @param   Varien_Event_Observer $observer
      * @return  CC_Catalog_Model_Price_Observer
      */
-    public function apply_discount_percent($observer)
+    public function CC_Catalog_Model_Price_Observer($observer)
     {
         $event = $observer->getEvent();
         $product = $event->getProduct();
@@ -44,4 +44,6 @@ class CC_Catalog_Model_Price_Observer
         return $this;
     }
 }
+
+
 
