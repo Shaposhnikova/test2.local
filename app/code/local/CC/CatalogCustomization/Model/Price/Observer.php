@@ -10,7 +10,7 @@ class CC_Catalog_Model_Price_Observer extends Varien_Event_Observer
      * @param   Varien_Event_Observer $observer
      * @return  CC_Catalog_Model_Price_Observer
      */
-    public function CC_Catalog_Model_Price_Observer($observer)
+    public function apply_discount_percent($observer)
     {
         $event = $observer->getEvent();
         $product = $event->getProduct();
