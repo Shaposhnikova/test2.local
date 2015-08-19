@@ -14,7 +14,7 @@ class CC_CatalogCustomization_Model_Price_Observer
         // process percentage discounts only for simple products
         if ($product->getSuperProduct() && $product->getSuperProduct()->isConfigurable()) {
         } else {
-            $percentDiscount = $percentDiscount = 30;//$product->getPercentDiscount();
+            $percentDiscount = 30;//$product->getPercentDiscount();
 
             if (is_numeric($percentDiscount)) {
                 $today = floor(time()/86400)*86400;
