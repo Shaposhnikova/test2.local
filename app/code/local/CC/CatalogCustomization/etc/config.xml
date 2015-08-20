@@ -25,5 +25,16 @@
             </observers>
         </catalog_product_get_final_price>
     </events>
+<events>
+    <catalog_product_collection_load_after>
+            <observers>
+                <cc_catalog_price_observer>
+                    <type>singleton</type>
+                    <class>CC_CatalogCustomization_Model_Price_Observer2</class>
+                    <method>applyDiscountPercent2</method>
+                </cc_catalog_price_observer>
+            </observers>
+        </catalog_product_collection_load_after>
+    </events>
 </frontend>
 </config>

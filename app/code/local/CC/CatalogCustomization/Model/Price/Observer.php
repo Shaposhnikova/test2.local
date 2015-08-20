@@ -17,9 +17,9 @@ class CC_CatalogCustomization_Model_Price_Observer
             $percentDiscount = 30;//$product->getPercentDiscount();
 
             if (is_numeric($percentDiscount)) {
-                $today = floor(time()/86400)*86400;
-                $from = floor(strtotime($product->getSpecialFromDate())/86400)*86400;
-                $to = floor(strtotime($product->getSpecialToDate())/86400)*86400;
+                $today = floor(time() / 86400) * 86400;
+                $from = floor(strtotime($product->getSpecialFromDate()) / 86400) * 86400;
+                $to = floor(strtotime($product->getSpecialToDate()) / 86400) * 86400;
 
                 if ($product->getSpecialFromDate() && $today < $from) {
                 } elseif ($product->getSpecialToDate() && $today > $to) {
@@ -33,8 +33,8 @@ class CC_CatalogCustomization_Model_Price_Observer
                     if ($specialPrice < 0)
                         $specialPrice = $finalPriceNow;
 
-                   // if ($specialPrice < $finalPriceNow)
-                        $product->setFinalPrice($specialPrice); // set the product final price
+                    // if ($specialPrice < $finalPriceNow)
+                    $product->setFinalPrice($specialPrice); // set the product final price
                 }
             }
         }
@@ -42,6 +42,11 @@ class CC_CatalogCustomization_Model_Price_Observer
         return $this;
     }
 }
+
+
+//catalog_product_collection_load_after
+
+
 
 
 
