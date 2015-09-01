@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <CC_Video>
+            <version>0.0.1</version>
+        </CC_Video>
+    </modules>
+</config>
