@@ -1,8 +1,33 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <config>
     <modules>
-        <CC_Video>
-            <version>0.0.1</version>
-        </CC_Video>
+        <CC2_Video>
+            <version>1.0.0.1</version>
+        </CC2_Video>
     </modules>
+
+    <global>
+        <resources>
+            <attribute_setup_setup>
+                <setup>
+                    <module>CC2_Video</module>
+                    <class>Mage_Catalog_Model_Resource_Eav_Mysql4_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </attribute_setup_setup>
+            <attribute_setup_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </attribute_setup_write>
+            <attribute_setup_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </attribute_setup_read>
+        </resources>
+    </global>
 </config>
+
