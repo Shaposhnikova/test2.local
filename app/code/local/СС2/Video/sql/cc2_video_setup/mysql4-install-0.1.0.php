@@ -4,7 +4,7 @@
 
 $installer = $this;
 $installer->startSetup();
-
+die('ok');
 $entityTypeId     = $installer->getEntityTypeId('catalog_category');
 $attributeSetId   = $installer->getDefaultAttributeSetId($entityTypeId);
 //$attributeGroupId = $installer->getDefaultAttributeGroupId($entityTypeId, $attributeSetId); //можно получить дефолтную группу
