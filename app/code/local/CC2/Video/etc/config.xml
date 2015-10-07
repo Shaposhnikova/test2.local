@@ -10,7 +10,11 @@
             <cc2_video_setup>
                 <setup>
                     <module>CC2_Video</module>
+
                 </setup>
+               <!-- <connection>
+                    <use>core_setup</use>
+                </connection> -->
             </cc2_video_setup>
         </resources>
     </global>
