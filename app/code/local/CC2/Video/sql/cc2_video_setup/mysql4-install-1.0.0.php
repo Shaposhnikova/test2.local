@@ -9,7 +9,7 @@ $entityTypeId     = $setup->getEntityTypeId('customer');
 $attributeSetId   = $setup->getDefaultAttributeSetId($entityTypeId);
 $attributeGroupId = $setup->getDefaultAttributeGroupId($entityTypeId, $attributeSetId);
 
-$setup->addAttribute('customer', 'your_attribute_code_here', array(
+$setup->addAttribute('customer', 'video', array(
     'input'         => 'text',
     'type'          => 'text',
     'label'         => 'Video',
@@ -21,7 +21,7 @@ $setup->addAttribute('customer', 'your_attribute_code_here', array(
 
 
 
-$oAttribute = Mage::getSingleton('eav/config')->getAttribute('customer', 'your_attribute_code_here');
+$oAttribute = Mage::getSingleton('eav/config')->getAttribute('customer', 'video');
 $oAttribute->setData('used_in_forms', array('adminhtml_customer'));
 $oAttribute->save();
 
