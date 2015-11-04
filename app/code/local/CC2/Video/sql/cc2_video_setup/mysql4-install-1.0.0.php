@@ -5,11 +5,11 @@ $installer->startSetup();
 
 $setup = new Mage_Eav_Model_Entity_Setup('core_setup');
 
-$entityTypeId     = $setup->getEntityTypeId('customer');
+$entityTypeId     = $setup->getEntityTypeId('product');
 $attributeSetId   = $setup->getDefaultAttributeSetId($entityTypeId);
 $attributeGroupId = $setup->getDefaultAttributeGroupId($entityTypeId, $attributeSetId);
 
-$setup->addAttribute('customer', 'video', array(
+$setup->addAttribute('product', 'video', array(
     'input'         => 'text',
     'type'          => 'text',
     'label'         => 'Video',
@@ -21,8 +21,8 @@ $setup->addAttribute('customer', 'video', array(
 
 
 
-$oAttribute = Mage::getSingleton('eav/config')->getAttribute('customer', 'video');
-$oAttribute->setData('used_in_forms', array('adminhtml_customer'));
+$oAttribute = Mage::getSingleton('eav/config')->getAttribute('product', 'video');
+$oAttribute->setData('used_in_forms', array('adminhtml_product'));
 $oAttribute->save();
 
 $setup->endSetup();
