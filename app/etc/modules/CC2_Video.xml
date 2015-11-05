@@ -1,9 +1,0 @@
-<?xml version="1.0" ?>
-<config>
-    <modules>
-        <CC2_Video>
-            <active>true</active>
-            <codePool>local</codePool>
-        </CC2_Video>
-    </modules>
-</config>
