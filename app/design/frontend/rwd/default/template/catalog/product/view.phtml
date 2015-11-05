@@ -35,8 +35,11 @@
 ?>
 
 
+
+
 <?php $_helper = $this->helper('catalog/output'); ?>
 <?php $_product = $this->getProduct(); ?>
+
 <script type="text/javascript">
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
 </script>
@@ -63,6 +66,7 @@
                 </div>
                 <?php echo $this->getChildHtml('product_video'); ?>
 
+
                 <div class="price-info">
                     <?php echo $this->getPriceHtml($_product); ?>
                     <?php echo $this->getChildHtml('bundle_prices') ?>
@@ -82,16 +86,13 @@
                     </div>
                 <?php endif;?>
 
-                
-
-                <?php $_product->getResource()->getAttribute('video');?>
-                <?php $_product->getAttributeText('video')?>
 
                 <?php
                 if ($attr = $_product->getResource()->getAttribute('video')) {
-                echo $attr->getFrontend()->getValue($_product); // вернет текст: red, green
+                    echo '<iframe width="560" height="315" src="'.$attr->getFrontend()->getValue($_product).'" frameborder="0" allowfullscreen></iframe>';
                 }
                 ?>
+
 
                 <?php echo $this->getChildHtml('other');?>
 
@@ -100,8 +101,6 @@
 
 
                 <?php endif; ?>
-
-
 
             </div>
 
@@ -201,7 +200,7 @@
             </dl>
         <?php endif; ?>
     </div>
-
+<div>
     <?php echo $this->getChildHtml('upsell_products') ?>
     <?php echo $this->getChildHtml('product_additional_data') ?>
 
