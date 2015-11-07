@@ -87,12 +87,6 @@
                 <?php $_product->getResource()->getAttribute('video');?>
                 <?php $_product->getAttributeText('video')?>
 
-                <?php
-                if ($attr = $_product->getResource()->getAttribute('video')) {
-                echo $attr->getFrontend()->getValue($_product); // вернет текст: red, green
-                }
-                ?>
-
                 <?php echo $this->getChildHtml('other');?>
 
                 <?php if ($_product->isSaleable() && $this->hasOptions()):?>
@@ -100,7 +94,9 @@
 
 
                 <?php endif; ?>
-
+                <?php if($video = $_product->getVideo()): ?>
+                    <iframe width="560" height="315" src="<?php echo $video ?>" frameborder="0" allowfullscreen></iframe>
+                <?php endif; ?>
 
 
             </div>
