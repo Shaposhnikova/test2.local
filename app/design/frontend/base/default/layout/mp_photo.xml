@@ -1,0 +1,11 @@
+<layout>
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="addLink">
+                <name>my_photo</name>
+                <path>mp_photo/index/index</path>
+                <label>My Photo</label>
+            </action>
+        </reference>
+    </customer_account>
+</layout>

@@ -1,0 +1,32 @@
+<config>
+    <modules>
+        <MP_Photo>
+            <version>0.1.0</version>
+        </MP_Photo>
+    </modules>
+    <frontend>
+        <routers>
+            <photo>
+                <use>standard</use>
+                <args>
+                    <module>MP_Photo</module>
+                    <frontName>mp_photo</frontName>
+                </args>
+            </photo>
+        </routers>
+            <layout>
+                <updates>
+                    <mp_photo module="MP_Photo">
+                        <file>mp_photo.xml</file>
+                    </mp_photo>
+                </updates>
+            </layout>
+    </frontend>
+    <global>
+        <helpers>
+            <mp_photo>
+                <class>MP_Photo_Helper</class>
+            </mp_photo>
+        </helpers>
+    </global>
+</config>

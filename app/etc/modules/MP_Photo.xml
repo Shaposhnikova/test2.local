@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <MP_Photo>
+            <active>true</active>
+            <codePool>local</codePool>
+        </MP_Photo>
+    </modules>
+</config>
