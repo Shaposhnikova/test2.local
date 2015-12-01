@@ -42,6 +42,14 @@ class MP_Photo_IndexController extends Mage_Core_Controller_Front_Action
                 $error = true;
             }
         }
+        $url = Mage::getUrl('mp_photo/index/post').$fileName;
+        $customer = Mage::helper('customer')->getCustomer();
+        $customer->setCustomerPhoto($url);
+        $customer->save();
+
+        $imagePath = $customer->getCustomerPhoto();
+        echo $imagePath;
+
     }
 }
 
