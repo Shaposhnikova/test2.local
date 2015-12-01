@@ -2,10 +2,20 @@
     <customer_account>
         <reference name="customer_account_navigation">
             <action method="addLink">
-                <name>my_photo</name>
+                <name>myphoto</name>
                 <path>mp_photo/index/index</path>
                 <label>My Photo</label>
             </action>
         </reference>
     </customer_account>
+    <mp_photo_index_index>
+        <update handle="customer_account" />
+        <reference name="my.account.wrapper">
+            <block type="core/template" name="mp_photo_content" template="mp_photo.phtml"/>
+        </reference>
+    </mp_photo_index_index>
 </layout>
+
+
+
+

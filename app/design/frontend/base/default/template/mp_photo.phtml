@@ -1,0 +1,14 @@
+<?php $url = Mage::getUrl('mp_photo/index/post'); ?>
+<?php echo '<form enctype="multipart/form-data" method="post" action="'.$url.'">'; ?>
+<div class="dashboard">
+    <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+    <div class="box-account box-info">
+        <div class="box-head">
+            <h2><?php echo $this->__('My Photo') ?></h2>
+            <p><br/>Upload your photo</p>
+            <p><br/>
+                <input type="file" name="photo" multiple accept="image/*,image/jpeg"><input type="submit" name="submit" value="Upload">
+            </p>
+        </div>
+    </div>
+</div>

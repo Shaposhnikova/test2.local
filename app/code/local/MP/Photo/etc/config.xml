@@ -6,13 +6,13 @@
     </modules>
     <frontend>
         <routers>
-            <photo>
+            <mp_photo>
                 <use>standard</use>
                 <args>
                     <module>MP_Photo</module>
                     <frontName>mp_photo</frontName>
                 </args>
-            </photo>
+            </mp_photo>
         </routers>
             <layout>
                 <updates>
@@ -28,5 +28,16 @@
                 <class>MP_Photo_Helper</class>
             </mp_photo>
         </helpers>
+            <resources>
+                <mp_photo_setup>
+                    <setup>
+                        <module>MP_Photo</module>
+                        <class>Mage_Customer_Model_Entity_Setup</class>
+                    </setup>
+                    <connection>
+                        <use>core_setup</use>
+                    </connection>
+                </mp_photo_setup>
+            </resources>
     </global>
 </config>
