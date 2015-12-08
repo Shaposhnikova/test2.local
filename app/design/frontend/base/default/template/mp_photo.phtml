@@ -1,14 +1,29 @@
 <?php $url = Mage::getUrl('mp_photo/index/post'); ?>
+
 <?php echo '<form enctype="multipart/form-data" method="post" action="'.$url.'">'; ?>
+<?php
+$ava = '';
+if(Mage::getSingleton('customer/session')->isLoggedIn()) {
+    $customerId = Mage::getSingleton('customer/session')->getId();
+    $customerModel = Mage::getModel('customer/customer')->load($customerId);
+    $ava = $customerModel->getCustomerPhoto();
+    $ava = str_replace('index.php/', '', $ava);
+}
+?>
 <div class="dashboard">
     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <div class="box-account box-info">
         <div class="box-head">
             <h2><?php echo $this->__('My Photo') ?></h2>
             <p><br/>Upload your photo</p>
-           <?php echo '<img src="$imagePath">' ?>
             <p><br/>
                 <input type="file" name="photo" multiple accept="image/*,image/jpeg"><input type="submit" name="submit" value="Upload">
+            </p>
+            <p><br/>
+                <?php if ($ava != ''){
+                    echo '<img src="'.$ava.'" alt="">';
+                }
+                ?>
             </p>
         </div>
     </div>

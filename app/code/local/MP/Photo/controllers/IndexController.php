@@ -21,9 +21,9 @@ class MP_Photo_IndexController extends Mage_Core_Controller_Front_Action
 
     public function postAction()
     {
-
         $fileName = '';
-        if (isset($_FILES['photo']['name']) && $_FILES['photo']['name'] != '') {
+        if (isset($_FILES['photo']['name']) && $_FILES['photo']['name'] != '')
+        {
             try {
                 $fileName = $_FILES['photo']['name'];
                 $fileExt = strtolower(substr(strrchr($fileName, "."), 1));
@@ -37,21 +37,39 @@ class MP_Photo_IndexController extends Mage_Core_Controller_Front_Action
                     mkdir($path, 0777, true);
                 }
                 $uploader->save($path . DS, $fileName);
-            } catch (Exception $e) {
+            }
+            catch (Exception $e)
+            {
                 echo $e;
                 $error = true;
             }
+            $url = Mage::getUrl('media/photos') . $fileName;
+            $this->saveUrlToCustomersAttribute($url);
         }
-        $url = Mage::getUrl('mp_photo/index/post').$fileName;
-        $customer = Mage::helper('customer')->getCustomer();
-        $customer->setCustomerPhoto($url);
-        $customer->save();
-
-        $imagePath = $customer->getCustomerPhoto();
-        echo $imagePath;
-
+        $this->_redirect('*/*/index');
     }
+
+    public function saveUrlToCustomersAttribute($url)
+    {
+        if($url){
+            if(Mage::getSingleton('customer/session')->isLoggedIn()) {
+                $customer = Mage::getSingleton('customer/session');
+                $customerModel = Mage::getModel('customer/customer')->load($customer->getId());
+                $customerModel->setCustomerPhoto($url);
+                try {
+                    $customerModel->save();
+                    print('Saved: '.$customerModel->getCustomerPhoto());
+                } catch (Exception $ex) {
+                    Mage::throwException($ex->getMessage());
+                }
+            }
+        }
+    }
+
 }
+
+
+
 
 
 

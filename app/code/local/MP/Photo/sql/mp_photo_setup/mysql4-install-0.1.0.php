@@ -1,7 +1,6 @@
 <?php
 
 
-
 $installer = $this;
 $installer->startSetup();
 
@@ -11,10 +10,10 @@ $entityTypeId     = $setup->getEntityTypeId('customer');
 $attributeSetId   = $setup->getDefaultAttributeSetId($entityTypeId);
 $attributeGroupId = $setup->getDefaultAttributeGroupId($entityTypeId, $attributeSetId);
 
-$setup->addAttribute('customer', 'customer_photo', array(
+$setup->addAttribute('customer', 'CustomerPhoto', array(
     'input'         => 'text', //or select or whatever you like
-    'type'          => 'int', //or varchar or anything you want it
-    'label'         => 'customer_photo',
+    'type'          => 'text', //or varchar or anything you want it
+    'label'         => 'CustomerPhoto',
     'visible'       => 1,
     'required'      => 0, //mandatory? then 1
     'user_defined' => 1,
@@ -24,11 +23,11 @@ $setup->addAttributeToGroup(
     $entityTypeId,
     $attributeSetId,
     $attributeGroupId,
-    'customer_photo',
+    'CustomerPhoto',
     '100'
 );
 
-$oAttribute = Mage::getSingleton('eav/config')->getAttribute('customer', 'customer_photo');
+$oAttribute = Mage::getSingleton('eav/config')->getAttribute('customer', 'CustomerPhoto');
 $oAttribute->setData('used_in_forms', array('adminhtml_customer'));
 $oAttribute->save();
 
