@@ -6,7 +6,7 @@ $ava = '';
 if(Mage::getSingleton('customer/session')->isLoggedIn()) {
     $customerId = Mage::getSingleton('customer/session')->getId();
     $customerModel = Mage::getModel('customer/customer')->load($customerId);
-    $ava = $customerModel->getCustomerPhoto();
+    $ava = $customerModel->getMyphoto();
     $ava = str_replace('index.php/', '', $ava);
 }
 ?>
@@ -24,6 +24,7 @@ if(Mage::getSingleton('customer/session')->isLoggedIn()) {
                     echo '<img src="'.$ava.'" alt="">';
                 }
                 ?>
+
             </p>
         </div>
     </div>

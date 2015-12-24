@@ -55,15 +55,17 @@ class MP_Photo_IndexController extends Mage_Core_Controller_Front_Action
             if(Mage::getSingleton('customer/session')->isLoggedIn()) {
                 $customer = Mage::getSingleton('customer/session');
                 $customerModel = Mage::getModel('customer/customer')->load($customer->getId());
-                $customerModel->setCustomerPhoto($url);
+                $customerModel->setMyphoto($url);
                 try {
                     $customerModel->save();
-                    print('Saved: '.$customerModel->getCustomerPhoto());
+                    print('Saved: '.$customerModel->getMyphoto());
                 } catch (Exception $ex) {
                     Mage::throwException($ex->getMessage());
                 }
             }
         }
+
+
     }
 
 }
