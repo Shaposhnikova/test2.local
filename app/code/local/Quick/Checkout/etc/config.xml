@@ -1,0 +1,37 @@
+<config>
+    <modules>
+        <Quick_Checkout>
+            <version>0.1.0</version>
+        </Quick_Checkout>
+    </modules>
+    <global>
+        <models>
+            <checkout>
+                <rewrite>
+                    <type_onepage>Quick_Checkout_Model_Type_Onepage</type_onepage>
+                </rewrite>
+            </checkout>
+        </models>
+
+        <blocks>
+            <checkout>
+                <rewrite>
+                    <onepage_shipping_method>Quick_Checkout_Block_Onepage_Shipping_Method</onepage_shipping_method>
+                </rewrite>
+            </checkout>
+        </blocks>
+    </global>
+
+    <frontend>
+        <routers>
+            <checkout>
+                <args>
+                    <modules>
+                        <checkoutquick before="Mage_Checkout">Quick_Checkout</checkoutquick>
+                    </modules>
+                </args>
+            </checkout>
+        </routers>
+    </frontend>
+
+</config>

@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <Quick_Checkout>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Quick_Checkout>
+    </modules>
+</config>
