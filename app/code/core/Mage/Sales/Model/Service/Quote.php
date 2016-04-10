@@ -297,10 +297,17 @@ class Mage_Sales_Model_Service_Quote
                     Mage::helper('sales')->__('Please check shipping address information. %s', implode(' ', $addressValidation))
                 );
             }
+
+            $shipping_method = "freeshipping_freeshipping";
+            $address->setShippingMethod($shipping_method);
+            $address->setFreeShipping(true);
+            $address->setCollectShippingRates(true)->collectShippingRates();
+            $this->getQuote()->collectTotals()->save();
+
             $method= $address->getShippingMethod();
             $rate  = $address->getShippingRateByCode($method);
             if (!$this->getQuote()->isVirtual() && (!$method || !$rate)) {
-                Mage::throwException(Mage::helper('sales')->__('Please specify a shipping method.'));
+//                Mage::throwException(Mage::helper('sales')->__('Please specify a shipping method.'));
             }
         }
 
