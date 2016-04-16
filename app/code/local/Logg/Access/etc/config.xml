@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Logg_Access>
+            <version>0.0.1</version>
+        </Logg_Access>
+    </modules>
+    <global>
+        <resources>
+            <log_access_setup>
+                <setup>
+                    <module>Logg_Access</module>
+                    <class>Mage_Eav_Model_Entity_Setup</class>
+                </setup>
+                <connection>
+                    <use>default_setup</use>
+                </connection>
+            </log_access_setup>
+        </resources>
+    </global>
+    <frontend>
+        <routers>
+            <catalog>
+                <args>
+                    <modules>
+                        <Logg_Access before="Mage_Catalog">Logg_Access</Logg_Access>
+                    </modules>
+                </args>
+            </catalog>
+        </routers>
+    </frontend>
+</config>

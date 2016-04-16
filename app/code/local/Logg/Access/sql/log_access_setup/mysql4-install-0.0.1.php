@@ -5,7 +5,8 @@ $installer->startSetup();
 $attribute  = array(
     'type' => 'text',
     'label'=> 'only_logged_in',
-    'input' => 'textarea',
+    'source' => 'eav/entity_attribute_source_boolean',
+    'input' => 'select',
     'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
     'visible' => true,
     'required' => false,
