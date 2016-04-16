@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Sasha_Access>
+            <version>0.0.1</version>
+        </Sasha_Access>
+    </modules>
+    <global>
+        <resources>
+            <access_setup>
+                <setup>
+                    <module>Sasha_Access</module>
+                    <class>Mage_Eav_Model_Entity_Setup</class>
+                </setup>
+                <connection>
+                    <use>default_setup</use>
+                </connection>
+            </access_setup>
+        </resources>
+    </global>
+</config>

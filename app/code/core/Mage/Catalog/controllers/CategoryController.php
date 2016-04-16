@@ -116,7 +116,18 @@ class Mage_Catalog_CategoryController extends Mage_Core_Controller_Front_Action
         if ($category = $this->_initCatagory()) {
             $design = Mage::getSingleton('catalog/design');
             $settings = $design->getDesignSettings($category);
-
+            $category->getAttributes();
+            if( !Mage::getSingleton( 'customer/session' )->isLoggedIn() ) {
+                $isLoggedIn = 0;
+                foreach($category->getData() as $key => $attribute) {
+                   if($key == 'only_logged_in'){
+                        $isLoggedIn = $attribute;
+                   }
+                }
+                if($isLoggedIn == 'yes'){
+                    Mage::app()->getResponse()->setRedirect(Mage::getUrl("customer/account/login"));
+                }
+            }
             // apply custom design
             if ($settings->getCustomDesign()) {
                 $design->applyCustomDesign($settings->getCustomDesign());
