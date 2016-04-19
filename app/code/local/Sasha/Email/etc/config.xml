@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Sasha_Email>
+            <version>0.0.1</version>
+        </Sasha_Email>
+    </modules>
+    <frontend>
+        <routers>
+            <customer>
+                <args>
+                    <modules>
+                        <Sasha_Email before="Mage_Customer">Sasha_Email</Sasha_Email>
+                    </modules>
+                </args>
+            </customer>
+        </routers>
+    </frontend>
+</config>
